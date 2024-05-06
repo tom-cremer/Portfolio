@@ -20,7 +20,7 @@ This is a WordPress theme developed for the Portfolio project at HEPL (Haute Éc
 - Customize the appearance and content of your portfolio pages using WordPress blocks and widgets.
 
 ## Contributors
-- [Your Name](https://github.com/your-github-username)
+- [Tom Cremer](https://github.com/tom-cremer)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
@@ -35,4 +35,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 For inquiries or support, please contact:
 - Email: your-email@example.com
-- Website: [example.com](https://example.com)
+- Website: [example.com](https://tomcremer.be)
