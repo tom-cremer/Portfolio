@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url("../fonts/Caveat/Caveat.ttf");
+}
+
+@font-face {
+    font-family: 'Poppins regular';
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: 'Poppins medium';
+    src: url("../fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+    font-family: 'Poppins semibold';
+    src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+    font-family: 'Poppins bold';
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
