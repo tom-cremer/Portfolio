@@ -3,10 +3,15 @@
 @import "./magic.css";
 @import "./contact.css";
 
+:root {
+    --button: #10B982;
+    --button-hover: #38BC91;
+}
 
 body {
     background-color: #02382b;
-    min-height: 100vh;
+    color: white;
+
 }
 
 /*--------------------------DIAMOND-------------------------*/
@@ -67,7 +72,6 @@ body {
 .main-container {
     position: relative;
     min-height: 100vh; /*TODO: need to change this*/
-    padding: 20px 20px;
     background: linear-gradient(0deg, rgba(16, 185, 130, 0.2) 0%, #05271F 100%);
 
 }
@@ -77,6 +81,7 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 1em;
+    margin: 20px 0 0 20px;
 
 }
 
@@ -268,17 +273,22 @@ body {
 
 
 /*--------------------------SKILLS-------------------------*/
+.skills-container {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+}
 
 .scroller {
-    margin: 60px auto;
-    max-width: 600px;
+    min-width: 400px;
+    max-width: 1000px;
 }
 
 .scroller__inner {
     padding-block: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2.5rem;
 }
 
 .scroller[data-animated="true"] {
@@ -303,9 +313,11 @@ body {
 .scroller[data-speed="fast"] {
     --_animation-duration: 20s;
 }
+
 .scroller[data-speed="normal"] {
     --_animation-duration: 40s;
 }
+
 .scroller[data-speed="slow"] {
     --_animation-duration: 60s;
 }
@@ -322,8 +334,108 @@ body {
 }
 
 
-
 /*--------------------------PROJECT-------------------------*/
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(0deg, #05271F 0%, rgba(16, 185, 130, 0.2) 100%);
+}
+
+.project-title {
+    font-family: 'Poppins', Montserrat, helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+.project {
+    display: inline-block;
+    position: relative;
+}
+
+.p-title {
+    font-family: 'Poppins', Montserrat, helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-shadow: 4px 8px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px;
+}
+
+.p-image {
+    border-radius: 18px;
+    width: 360px;
+    aspect-ratio: auto;
+}
+
+.p-tag {
+    font-family: 'Poppins', Montserrat, helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    background: linear-gradient(90deg, #00BB7E 0%, #16CA97 50%, #259D81 100%);
+    box-shadow: 3px 6px 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 4px 16px;
+    border-radius: 7px;
+
+}
+
+.p-link {
+    font-family: 'Poppins', Montserrat, helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: -5%;
+    right: -10%;
+    background-color: var(--button);
+    padding: 12px 23px;
+    border-radius: 10px;
+    box-shadow: 3px 6px 10px 1px rgba(0, 0, 0, 0.2);
+    transition: ease-in 0.3s;
+}
+
+.p-link:hover {
+    box-shadow: 0 0 10px 0 var(--button);
+    text-decoration: underline;
+    background-color: var(--button-hover);
+}
+
+.p-overlay {
+    display: none;
+}
+
+.diamond.p-one {
+    top: 10%;
+    left: 10%;
+    animation-duration: 5s;
+}
+
+.diamond.p-two {
+    top: 20%;
+    left: 90%;
+    animation-duration: 8s;
+}
 
 
 /*----------------------PROJECT TEMPLATE--------------------*/
