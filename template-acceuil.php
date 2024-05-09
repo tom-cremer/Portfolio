@@ -113,15 +113,64 @@
 
             // Check if there are images
             foreach ($skillIcons as $icon):?>
-                <li><img src="<?= $icon['url']?>" alt="<?= $icon['alt']?>"></li>
+                <li><img src="<?= $icon['url'] ?>" alt="<?= $icon['alt'] ?>"></li>
             <?php
-                endforeach;
+            endforeach;
             ?>
-
         </ul>
     </div>
 </section>
+<section class="projects-container">
+    <h2 class="project-title"><?= get_field('project_section_title');?></h2>
+    <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
+        <?php
+        // Créer une nouvelle requête Wordpress pour récupérer mes 3 derniers projets en date.
+        $projects = new WP_Query([
+            'post_type' => 'projet',
+            'post_status' => 'publish',
+            'posts_per_page' => 3,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        ]); ?>
+        <ul class="project-list">
 
+            <?php
+            // Boucler via "The Loop" sur le résultat de cette requête
+            if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post();
+                ?>
+                <li class="project-item">
+                    <article class="project">
+                        <h3 class="p-title"><?= get_field('project_name'); ?></h3>
+                        <span class="p-tag"><?= get_field('sticker'); ?></span>
+                        <img class="p-image" src="<?= get_field('image_presentation')['url']; ?>" alt="<?= get_field('image_presentation')['alt']; ?>">
+                        <div class="p-overlay">
+                            <h4 class="p-desc-title">Description</h4>
+                            <p class="p-description"><?= get_field('description') ?></p>
+                        </div>
+                        <a class="p-link" href="<?= get_permalink(); ?>">Voir le Projet
+                            <svg width="27" height="16" viewBox="0 0 27 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.19012 6.79968C0.63784 6.79968 0.190125 7.2474 0.190125 7.79968C0.190125 8.35197 0.63784 8.79968 1.19012 8.79968L1.19012 6.79968ZM26.4984 8.50679C26.8889 8.11627 26.8889 7.4831 26.4984 7.09258L20.1344 0.728615C19.7439 0.338091 19.1107 0.338091 18.7202 0.728615C18.3297 1.11914 18.3297 1.7523 18.7202 2.14283L24.377 7.79968L18.7202 13.4565C18.3297 13.8471 18.3297 14.4802 18.7202 14.8708C19.1107 15.2613 19.7439 15.2613 20.1344 14.8708L26.4984 8.50679ZM1.19012 8.79968L25.7912 8.79968V6.79968L1.19012 6.79968L1.19012 8.79968Z"
+                                      fill="white"/>
+                            </svg>
+                        </a>
+                    </article>
+                </li>
+
+            <?php endwhile; endif; // Fin de "The Loop" des recettes ?>
+        </ul>
+    <?php endwhile; endif; // Fin de "The Loop" des recettes ?>
+    <svg class="diamond p-one" width="34" height="35" viewBox="0 0 34 35" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7797 2.12108C15.1742 -0.104004 18.82 -0.103998 20.2134 2.12177C21.5096 4.19218 23.1321 6.41076 25.1539 8.60184C27.3554 10.9876 29.5704 12.8423 31.5871 14.2774C33.467 15.6151 33.5694 18.5599 31.7514 19.9807C29.6922 21.59 27.4591 23.5908 25.2206 26.0614C23.0881 28.4151 21.343 30.7651 19.9222 32.9497C18.5899 34.9981 15.3954 34.997 14.0627 32.9489C12.6413 30.7645 10.8949 28.4148 8.76262 26.0614C6.52699 23.594 4.29682 21.5953 2.23983 19.987C0.4204 18.5644 0.524579 15.6137 2.40598 14.2742C4.42137 12.8393 6.63377 10.9845 8.8293 8.60184C10.8566 6.41052 12.482 4.19169 13.7797 2.12108Z"
+              fill="#10B982"/>
+    </svg>
+    <svg class="diamond p-two" width="34" height="35" viewBox="0 0 34 35" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7797 2.12108C15.1742 -0.104004 18.82 -0.103998 20.2134 2.12177C21.5096 4.19218 23.1321 6.41076 25.1539 8.60184C27.3554 10.9876 29.5704 12.8423 31.5871 14.2774C33.467 15.6151 33.5694 18.5599 31.7514 19.9807C29.6922 21.59 27.4591 23.5908 25.2206 26.0614C23.0881 28.4151 21.343 30.7651 19.9222 32.9497C18.5899 34.9981 15.3954 34.997 14.0627 32.9489C12.6413 30.7645 10.8949 28.4148 8.76262 26.0614C6.52699 23.594 4.29682 21.5953 2.23983 19.987C0.4204 18.5644 0.524579 15.6137 2.40598 14.2742C4.42137 12.8393 6.63377 10.9845 8.8293 8.60184C10.8566 6.41052 12.482 4.19169 13.7797 2.12108Z"
+              fill="#10B982"/>
+    </svg>
+</section>
 <?php get_footer(); ?>
 
 
