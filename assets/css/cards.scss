@@ -1,0 +1,112 @@
+
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  gap: 5px;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(-15px);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background: linear-gradient(0deg, #05271F 0%, #0a624f 50%, rgba(16, 185, 130, 1) 100%);
+  box-shadow: 0 0 200px 50px rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 9998;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.active {
+  display: block;
+}
+
+.o-card {
+  transition: transform 0.3s;
+}
+
+.o-card:hover {
+  transform: translateY(-10px);
+}
+
+.o-content {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto 1fr;
+  gap: 50px;
+  grid-auto-flow: row;
+  align-items: center;
+
+}
+
+.o-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.o-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.o-title {
+  font-size: 38px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.o-contact {
+  text-align: center;
+  background: #10B982;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0.5em 2em;
+  margin-top: 1.3em;
+  text-decoration: none;
+  border-radius: 10px;
+  color: white;
+}
+
+.cross {
+  background: rgb(10, 98, 79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 30px;
+  aspect-ratio: 1;
+  top: -30%;
+  right: 0;
+  z-index: 9999;
+  padding: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.line {
+  stroke: white;
+}
+
+.cross:hover .line {
+  stroke: #10B982;
+}
+
