@@ -1,0 +1,127 @@
+@import "variables";
+@import "font";
+
+.contact-title {
+  @include article-title;
+  margin-bottom: 1.5em;
+}
+
+.contact-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  padding: 3em;
+}
+
+.wpcf7 {
+  display: inline-block;
+}
+
+form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+
+
+  p {
+    margin-bottom: 1em;
+
+    .wpcf7-submit {
+      font-family: 'Poppins', Montserrat, helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      background-color: var(--button);
+      padding: 12px 23px;
+      border-radius: 10px;
+      border: 2px $green solid;
+      box-shadow: 3px 6px 10px 1px rgba(0, 0, 0, 0.2);
+      transition: ease-in 0.3s;
+      width: 100%;
+    }
+
+    .wpcf7-submit:hover {
+      text-decoration: underline;
+      background-color: $button-hover;
+    }
+
+    label {
+      width: 100%;
+      @include article-txt;
+
+      span input,
+      span textarea {
+        margin-top: 10px;
+        width: 98%;
+        padding: 10px 5px;
+        background: #046450;
+        border: 2px $green solid;
+        border-radius: 7px;
+        color: white;
+        margin-bottom: 7px;
+
+      }
+
+
+    }
+
+  }
+
+}
+
+::placeholder {
+  color: #c7c7c7;
+  opacity: 1; /* Firefox */
+  font-family: $poppins;
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  font-family: $poppins;
+  color: #c7c7c7;
+}
+
+.wpcf7 form div.wpcf7-response-output {
+  margin: 0;
+}
+.contact-infos-list {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  background: #02382b;
+  mix-blend-mode: screen;
+  border: 2px $green solid;
+  border-radius: 15px;
+
+  h3 {
+    @include article-title;
+    margin-bottom: 0.8em;
+  }
+
+  .info-item {
+    margin-bottom: 2em;
+
+    p,
+    a {
+      @include article-txt;
+
+    }
+
+    .label {
+      font-family: $poppins_med;
+      font-weight: 600;
+      margin-bottom: 0.6em;
+    }
+
+    .data-mail {
+      color: white;
+    }
+  }
+}
+
+
