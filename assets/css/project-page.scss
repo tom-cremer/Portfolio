@@ -1,0 +1,21 @@
+@import "reset";
+
+
+.project-page {
+  margin-bottom: 70px;
+}
+
+.p-list {
+  padding: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5rem;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+@media screen and (max-width: 950px) {
+  .p-list {
+    justify-content: center;
+  }
+}
