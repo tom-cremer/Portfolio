@@ -1,0 +1,68 @@
+@import "font";
+
+
+// fonts
+$poppins: 'Poppins regular', 'Montserrat', Helvetica, Arial, sans-serif;
+$poppins_med: 'Poppins medium', 'Montserrat', Helvetica, Arial, sans-serif;
+$poppins_semi:'Poppins semibold', 'Montserrat', Helvetica, Arial, sans-serif;
+$poppins_bold:'Poppins bold', 'Montserrat', Helvetica, Arial, sans-serif;
+
+// color
+$tag-gradient: linear-gradient(90deg, #00BB7E 0%, #16CA97 50%, #259D81 100%);
+$green: #10B982;
+$button: #10B982;
+$button-hover: #38BC91;
+
+// mixins
+
+@mixin article-title {
+  font-family: $poppins_semi;
+  font-weight: 600;
+  font-size: 34px;
+}
+
+@mixin article-txt {
+  font-family: $poppins;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin button_url {
+  color: white;
+  border: 3px $green solid;
+  border-radius: 15px;
+  padding: 10px 16px;
+}
+
+@mixin item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin parkour-date {
+  font-family: $poppins;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@mixin pk-title {
+  font-family: $poppins_semi;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+@mixin icon_text {
+  @include article-txt;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px $green solid;
+  margin-bottom: 10px;
+  gap: 7px;
+}
+
