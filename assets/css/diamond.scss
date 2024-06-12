@@ -1,0 +1,79 @@
+
+/*--------------------------DIAMOND-------------------------*/
+
+.diamond {
+  position: absolute;
+  filter: drop-shadow(0 0 0.75rem rgba(16, 185, 130, 0.6));
+  animation: floatAnimation ease-in-out infinite, rotateAnimation ease-in-out infinite;
+}
+
+.diamond.d-one {
+  top: 40%;
+  left: 5%;
+  animation-duration: 7s;
+}
+
+.diamond.d-two {
+  top: 15%;
+  left: 55%;
+  animation-duration: 5s;
+}
+
+.diamond.d-three {
+  top: 85%;
+  left: 70%;
+  animation-duration: 4s;
+}
+
+.diamond.d-four {
+  top: 30%;
+  left: 90%;
+  animation-duration: 8s;
+}
+
+.diamond.p-one {
+  top: 10%;
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.diamond.p-two {
+  top: 20%;
+  left: 90%;
+  animation-duration: 8s;
+}
+
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateAnimation {
+  51% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .diamond {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+}
