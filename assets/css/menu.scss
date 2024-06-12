@@ -1,0 +1,127 @@
+@import "variables";
+@import "font";
+@import "reset";
+
+
+.nav {
+  display: inline-block;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  z-index: 1000;
+  margin: 10px 15px;
+
+  .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    list-style-type: none;
+    background: #085542;
+    margin: 0;
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  font-family: $poppins;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  width: 96px;
+  padding: 15px 0;
+  background: rgba(16, 185, 130, 0.3);
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+.nav-link:hover {
+  background: rgba(16, 185, 130, 1);
+  text-decoration: underline;
+}
+
+.active-link {
+  background: rgba(16, 185, 130, 1);
+  text-decoration: underline;
+}
+
+.burger-button {
+  display: none;
+}
+
+@media screen and (max-width: 970px) {
+
+
+  .nav {
+    display: none;
+  }
+
+  .burger-button {
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    z-index: 1000;
+    border-radius: 5px;
+    width: 20px;
+    aspect-ratio: 1;
+    padding: 15px;
+  }
+
+  .burger-line {
+    display: block;
+    width: 100%;
+    min-height: 2px;
+    background-color: white;
+    border-radius: 7px;
+    transition: translateY 100ms ease-in 200ms, rotate 100ms ease-in, opacity 400ms ease-in-out;
+  }
+  .menu-checkbox:checked + .burger-button {
+    gap: 0px;
+  }
+  .menu-checkbox:checked + .burger-button .burger-line {
+    transition: translateY 100ms ease-in 200ms, rotate 100ms ease-in, opacity 400ms ease-in-out;
+  }
+  .menu-checkbox:checked + .burger-button .top {
+    transform: translateY(50%);
+    rotate: 45deg;
+  }
+  .menu-checkbox:checked + .burger-button .middle {
+    display: none;
+  }
+  .menu-checkbox:checked + .burger-button .bottom {
+    rotate: -45deg;
+    transform: translateY(-55%);
+
+  }
+  .menu-checkbox:checked + .burger-button {
+    background-color: rgba(255, 255, 255, .15);
+  }
+  .menu-checkbox:checked ~ .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-height: 70px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(70px);
+  }
+  .menu-checkbox:checked ~ .nav .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
