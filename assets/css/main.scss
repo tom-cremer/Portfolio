@@ -1021,15 +1021,56 @@ body {
   }
 
   @media (max-width: 500px) {
-    .li1 { grid-area: li1; }
-    .li2 { grid-area: li2; }
-    .li3 { grid-area: li3; }
-    .li4 { grid-area: li4; }
-    .li5 { grid-area: li5; }
-    .li6 { grid-area: li6; }
-    .li7 { grid-area: li7; }
-    .li8 { grid-area: li8; }
-    .li9 { grid-area: li9; }
+    .li1 {
+      grid-area: li1;
+    }
+    .li2 {
+      grid-area: li2;
+    }
+    .li3 {
+      grid-area: li3;
+    }
+    .li4 {
+      grid-area: li4;
+    }
+    .li5 {
+      grid-area: li5;
+    }
+    .li6 {
+      grid-area: li6;
+    }
+    .li7 {
+      grid-area: li7;
+    }
+    .li8 {
+      grid-area: li8;
+    }
+    .li9 {
+      grid-area: li9;
+    }
+  }
+
+}
+
+@media screen and (max-width: 680px) {
+  .logo-name h1 {
+    font-size: 3em;
+
+  }
+
+}
+@media screen and (max-width: 490px) {
+  .logo-name h1 {
+    font-size: 2em;
+
+  }
+
+}
+@media screen and (max-width: 350px) {
+  .logo-name h1 {
+
+    font-size: 1.4em;
+
   }
 
 }

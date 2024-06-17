@@ -18,8 +18,10 @@
             </svg>
         </a>
         <article class="concept-article">
-            <img class="concept-img" src="<?= get_field('image_consigne')['url']; ?>"
-                 alt="<?= get_field('image_consigne')['alt']; ?>">
+            <div>
+                <img class="concept-img" src="<?= get_field('image_consigne')['url']; ?>"
+                     alt="<?= get_field('image_consigne')['alt']; ?>">
+            </div>
             <div>
                 <h3 class="concept-title">Consigne</h3>
                 <p class="concept-txt"><?= get_field('concept'); ?></p>
@@ -38,8 +40,11 @@
                 <h3 class="desc-title">Description</h3>
                 <p class="desc-txt"><?= get_field('description'); ?></p>
             </div>
-            <img class="desc-img" src="<?= get_field('image_presentation')['url']; ?>"
-                 alt="<?= get_field('image_presentation')['alt']; ?>">
+            <div>
+                <img class="desc-img" src="<?= get_field('image_presentation')['url']; ?>"
+                     alt="<?= get_field('image_presentation')['alt']; ?>">
+            </div>
+
         </article>
         <section class="gallery">
             <h3 class="g-title">Galerie</h3>

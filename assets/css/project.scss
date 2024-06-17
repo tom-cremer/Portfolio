@@ -1,13 +1,14 @@
 @import "variables";
 @import "font";
 
-main.post {
-  margin-top: 58px;
+.post {
+  max-width: 1065px;
+  margin: 58px auto;
   font-family: $poppins_semi;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: center;
 
   .project-t {
     font-family: $poppins_semi;
@@ -43,11 +44,12 @@ main.post {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 45px;
+    gap: 5%;
     margin-bottom: 45px;
 
     div {
-      width: 445px;
+      width: 45%;
+      min-width: 400px;
     }
 
     .concept-title {
@@ -62,7 +64,7 @@ main.post {
     }
 
     .concept-img {
-      width: 565px;
+      width: 100%;
       aspect-ratio: auto;
       border-radius: 18px;
     }
@@ -93,10 +95,11 @@ main.post {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 45px;
+    gap: 5%;
 
     div {
-      width: 445px;
+      width: 45%;
+      min-width: 400px;
     }
 
     .desc-title {
@@ -110,7 +113,7 @@ main.post {
     }
 
     .desc-img {
-      width: 565px;
+      width: 100%;
       aspect-ratio: auto;
       border-radius: 18px;
     }
@@ -142,18 +145,23 @@ main.post {
     .div1 {
       grid-area: logo;
     }
+
     .div2 {
       grid-area: mk1;
     }
+
     .div3 {
       grid-area: mk2;
     }
+
     .div4 {
       grid-area: mk3;
     }
+
     .div5 {
       grid-area: sq;
     }
+
     .div6 {
       grid-area: mk4;
     }
@@ -164,15 +172,141 @@ main.post {
       background: #046450;
       border: 2px $green solid;
       border-radius: 18px;
+
       img {
         width: 100%;
-        height: auto;
+        aspect-ratio: auto;
         object-fit: cover;
         object-position: center;
         border-radius: 12px;
+      }
+    }
+
+    @media screen and (max-width: 1150px) {
+      .gallery-grid {
+        margin: 0 15%;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(4, 200px);
+        grid-template-areas:
+          "div1 div2 div2"
+          "div4 div2 div2"
+          "div4 div5 div3"
+          "div6 div6 div3"
+
+      }
+
+      .div1 {
+        grid-area: div1;
+      }
+
+      .div2 {
+        grid-area: div2;
+      }
+
+      .div3 {
+        grid-area: div3;
+      }
+
+      .div4 {
+        grid-area: div4;
+      }
+
+      .div5 {
+        grid-area: div5;
+      }
+
+      .div6 {
+        grid-area: div6;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .gallery-grid {
+        margin: 0 5%;
+        grid-template-columns: repeat(2, minmax(100px, 200px));
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+          "div2 div2"
+          "div2 div2"
+          "div1 div3"
+          "div4 div3"
+          "div4 div5"
+          "div6 div5";
+      }
+
+      .div1 {
+        grid-area: div1;
+      }
+
+      .div2 {
+        grid-area: div2;
+      }
+
+      .div3 {
+        grid-area: div3;
+      }
+
+      .div4 {
+        grid-area: div4;
+      }
+
+      .div5 {
+        grid-area: div5;
+      }
+
+      .div6 {
+        grid-area: div6;
       }
     }
   }
 }
 
 
+@media screen and (max-width: 842px) {
+  .post {
+    .concept-article {
+      .concept-img {
+        margin-bottom: 30px;
+      }
+    }
+
+    .desc-article {
+      .desc-img {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .post {
+    ul.tools-list {
+      width: 95%;
+      padding: 10px 0;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .concept-article {
+      width: 95%;
+
+      div {
+        width: 100%;
+        min-width: unset;
+      }
+    }
+
+    .desc-article {
+      width: 95%;
+
+      div {
+        width: 100%;
+        min-width: unset;
+      }
+    }
+  }
+
+
+}

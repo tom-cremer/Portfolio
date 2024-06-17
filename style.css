@@ -18,144 +18,106 @@
   font-family: "Poppins bold";
   src: url(/fonts/Poppins-Bold.ttf?cdb29a5d7ccf57ff05a3fd9216d11771);
 }
-@font-face {
-  font-family: "Caveat";
-  src: url(/fonts/Caveat.ttf?31f0a02d84d42627c8941754389e2936);
-}
-@font-face {
-  font-family: "Poppins regular";
-  src: url(/fonts/Poppins-Regular.ttf?35d26b781dc5fda684cce6ea04a41a75);
-}
-@font-face {
-  font-family: "Poppins medium";
-  src: url(/fonts/Poppins-Medium.ttf?673ed42382ab264e0bf5b33f3579568c);
-}
-@font-face {
-  font-family: "Poppins semibold";
-  src: url(/fonts/Poppins-SemiBold.ttf?ac8d04b620e54be9b0f0f4851d56e4dd);
-}
-@font-face {
-  font-family: "Poppins bold";
-  src: url(/fonts/Poppins-Bold.ttf?cdb29a5d7ccf57ff05a3fd9216d11771);
-}
-.contact-title {
-  font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 34px;
-  margin-bottom: 1.5em;
-}
-
-.contact-container {
-  margin-top: 3rem;
+.contact-section {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  gap: 5rem;
-  padding: 3em;
+  margin: auto;
+  padding: 100px 50px;
 }
-
-.wpcf7 {
-  display: inline-block;
+.contact-section .contact-infos {
+  margin-bottom: 40px;
 }
-
-form {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10px;
+.contact-section .contact-infos ul {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: #10B982 solid 2px;
+  border-radius: 15px;
+  padding: 20px;
 }
-form p {
-  margin-bottom: 1em;
+.contact-section .contact-infos ul h3 {
+  font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  font-size: 1.6em;
 }
-form p .wpcf7-submit {
-  font-family: "Poppins", Montserrat, helvetica, Arial, sans-serif;
+.contact-section .contact-infos ul li {
+  margin: 15px 0;
+}
+.contact-section .contact-infos ul .label {
+  font-family: "Poppins medium", "Montserrat", Helvetica, Arial, sans-serif;
+  margin-bottom: 6px;
+}
+.contact-section .contact-infos ul p, .contact-section .contact-infos ul a {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  color: white;
+}
+.contact-section .contact-form {
+  max-width: 600px;
+  width: 100%;
+}
+.contact-section .contact-form .contact-title {
+  font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.contact-section .contact-form form p {
+  margin-bottom: 15px;
+}
+.contact-section .contact-form form label {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+.contact-section .contact-form form input, .contact-section .contact-form form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.contact-section .contact-form form input::-moz-placeholder, .contact-section .contact-form form textarea::-moz-placeholder {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+}
+.contact-section .contact-form form input::placeholder, .contact-section .contact-form form textarea::placeholder {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.3);
+}
+.contact-section .contact-form form input {
+  width: 94%;
+}
+.contact-section .contact-form form textarea {
+  width: 94%;
+  resize: vertical;
+}
+.contact-section .contact-form form .wpcf7-submit {
+  text-align: center;
+  width: 100%;
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: white;
   background-color: var(--button);
-  padding: 12px 23px;
   border-radius: 10px;
   border: 2px #10B982 solid;
   box-shadow: 3px 6px 10px 1px rgba(0, 0, 0, 0.2);
   transition: ease-in 0.3s;
-  width: 100%;
 }
-form p .wpcf7-submit:hover {
+.contact-section .contact-form form .wpcf7-submit:hover {
   text-decoration: underline;
   background-color: #38BC91;
 }
-form p label {
-  width: 100%;
-  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-form p label span input,
-form p label span textarea {
-  margin-top: 10px;
-  width: 98%;
-  padding: 10px 5px;
-  background: #046450;
-  border: 2px #10B982 solid;
-  border-radius: 7px;
-  color: white;
-  margin-bottom: 7px;
-}
-
-::-moz-placeholder {
-  color: #c7c7c7;
-  opacity: 1; /* Firefox */
+.contact-section .contact-form form div.wpcf7-response-output {
+  width: inherit;
+  border-radius: 8px;
   font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
 }
-
-::placeholder {
-  color: #c7c7c7;
-  opacity: 1; /* Firefox */
-  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
-}
-
-::-ms-input-placeholder { /* Edge 12 -18 */
-  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
-  color: #c7c7c7;
-}
-
-.wpcf7 form div.wpcf7-response-output {
-  margin: 0;
-}
-
-.contact-infos-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 20px;
-  background: #02382b;
-  mix-blend-mode: screen;
-  border: 2px #10B982 solid;
-  border-radius: 15px;
-}
-.contact-infos-list h3 {
-  font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 34px;
-  margin-bottom: 0.8em;
-}
-.contact-infos-list .info-item {
-  margin-bottom: 2em;
-}
-.contact-infos-list .info-item p,
-.contact-infos-list .info-item a {
-  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-.contact-infos-list .info-item .label {
-  font-family: "Poppins medium", "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  margin-bottom: 0.6em;
-}
-.contact-infos-list .info-item .data-mail {
-  color: white;
+@media screen and (max-width: 680px) {
+  .contact-section .contact-form {
+    width: 100%;
+  }
 }
 
 @font-face {
@@ -514,20 +476,22 @@ table {
   font-family: "Poppins bold";
   src: url(/fonts/Poppins-Bold.ttf?cdb29a5d7ccf57ff05a3fd9216d11771);
 }
-main.post {
-  margin-top: 58px;
+.post {
+  max-width: 1065px;
+  margin: 58px auto;
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-main.post .project-t {
+.post .project-t {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 44px;
   margin-bottom: 30px;
 }
-main.post .sticker {
+.post .sticker {
   font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -537,7 +501,7 @@ main.post .sticker {
   border-radius: 7px;
   margin-bottom: 30px;
 }
-main.post .url-project {
+.post .url-project {
   color: white;
   border: 3px #10B982 solid;
   border-radius: 15px;
@@ -547,37 +511,38 @@ main.post .url-project {
   align-items: center;
   margin-bottom: 70px;
 }
-main.post .url-project svg {
+.post .url-project svg {
   margin-left: 10px;
 }
-main.post .concept-article {
+.post .concept-article {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 45px;
+  gap: 5%;
   margin-bottom: 45px;
 }
-main.post .concept-article div {
-  width: 445px;
+.post .concept-article div {
+  width: 45%;
+  min-width: 400px;
 }
-main.post .concept-article .concept-title {
+.post .concept-article .concept-title {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
 }
-main.post .concept-article .concept-txt {
+.post .concept-article .concept-txt {
   margin-top: 20px;
   line-height: 160%;
   font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
-main.post .concept-article .concept-img {
-  width: 565px;
+.post .concept-article .concept-img {
+  width: 100%;
   aspect-ratio: auto;
   border-radius: 18px;
 }
-main.post .tools-list {
+.post .tools-list {
   max-width: 1065px;
   width: 98%;
   display: flex;
@@ -590,52 +555,53 @@ main.post .tools-list {
   border: 2px #10B982 solid;
   border-radius: 15px;
 }
-main.post .tools-list .tools-title {
+.post .tools-list .tools-title {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
 }
-main.post .desc-article {
+.post .desc-article {
   max-width: 1065px;
   margin-top: 45px;
   margin-bottom: 100px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 45px;
+  gap: 5%;
 }
-main.post .desc-article div {
-  width: 445px;
+.post .desc-article div {
+  width: 45%;
+  min-width: 400px;
 }
-main.post .desc-article .desc-title {
+.post .desc-article .desc-title {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
 }
-main.post .desc-article .desc-txt {
+.post .desc-article .desc-txt {
   margin-top: 20px;
   font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
-main.post .desc-article .desc-img {
-  width: 565px;
+.post .desc-article .desc-img {
+  width: 100%;
   aspect-ratio: auto;
   border-radius: 18px;
 }
-main.post .gallery {
+.post .gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
   margin-bottom: 300px;
 }
-main.post .gallery .g-title {
+.post .gallery .g-title {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
 }
-main.post .gallery .gallery-grid {
+.post .gallery .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 250px);
   grid-template-rows: repeat(3, 250px);
@@ -643,41 +609,123 @@ main.post .gallery .gallery-grid {
   grid-row-gap: 25px;
   grid-template-areas: "logo mk1 mk1 mk2" "mk3 mk1 mk1 mk2" "mk3 sq mk4 mk4";
 }
-main.post .gallery .div1 {
+.post .gallery .div1 {
   grid-area: logo;
 }
-main.post .gallery .div2 {
+.post .gallery .div2 {
   grid-area: mk1;
 }
-main.post .gallery .div3 {
+.post .gallery .div3 {
   grid-area: mk2;
 }
-main.post .gallery .div4 {
+.post .gallery .div4 {
   grid-area: mk3;
 }
-main.post .gallery .div5 {
+.post .gallery .div5 {
   grid-area: sq;
 }
-main.post .gallery .div6 {
+.post .gallery .div6 {
   grid-area: mk4;
 }
-main.post .gallery .g-item {
+.post .gallery .g-item {
   display: flex;
   padding: 7px;
   background: #046450;
   border: 2px #10B982 solid;
   border-radius: 18px;
 }
-main.post .gallery .g-item img {
+.post .gallery .g-item img {
   width: 100%;
-  height: auto;
+  aspect-ratio: auto;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
   border-radius: 12px;
 }
+@media screen and (max-width: 1150px) {
+  .post .gallery .gallery-grid {
+    margin: 0 15%;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(4, 200px);
+    grid-template-areas: "div1 div2 div2" "div4 div2 div2" "div4 div5 div3" "div6 div6 div3";
+  }
+  .post .gallery .div1 {
+    grid-area: div1;
+  }
+  .post .gallery .div2 {
+    grid-area: div2;
+  }
+  .post .gallery .div3 {
+    grid-area: div3;
+  }
+  .post .gallery .div4 {
+    grid-area: div4;
+  }
+  .post .gallery .div5 {
+    grid-area: div5;
+  }
+  .post .gallery .div6 {
+    grid-area: div6;
+  }
+}
+@media screen and (max-width: 700px) {
+  .post .gallery .gallery-grid {
+    margin: 0 5%;
+    grid-template-columns: repeat(2, minmax(100px, 200px));
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "div2 div2" "div2 div2" "div1 div3" "div4 div3" "div4 div5" "div6 div5";
+  }
+  .post .gallery .div1 {
+    grid-area: div1;
+  }
+  .post .gallery .div2 {
+    grid-area: div2;
+  }
+  .post .gallery .div3 {
+    grid-area: div3;
+  }
+  .post .gallery .div4 {
+    grid-area: div4;
+  }
+  .post .gallery .div5 {
+    grid-area: div5;
+  }
+  .post .gallery .div6 {
+    grid-area: div6;
+  }
+}
 
+@media screen and (max-width: 842px) {
+  .post .concept-article .concept-img {
+    margin-bottom: 30px;
+  }
+  .post .desc-article .desc-img {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .post ul.tools-list {
+    width: 95%;
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .post .concept-article {
+    width: 95%;
+  }
+  .post .concept-article div {
+    width: 100%;
+    min-width: unset;
+  }
+  .post .desc-article {
+    width: 95%;
+  }
+  .post .desc-article div {
+    width: 100%;
+    min-width: unset;
+  }
+}
 /*--------------------------DIAMOND-------------------------*/
 .diamond {
   position: absolute;
@@ -1174,7 +1222,7 @@ body {
   margin-bottom: 1em;
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
 }
 
 .o-items .o-contact {
@@ -1470,7 +1518,7 @@ body {
 .myself .title {
   font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 2em;
   margin-bottom: 1.5em;
 }
 .myself .me-grid {
@@ -1957,5 +2005,21 @@ body {
   }
   .myself .li9 {
     grid-area: li9;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .logo-name h1 {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 490px) {
+  .logo-name h1 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 350px) {
+  .logo-name h1 {
+    font-size: 1.4em;
   }
 }
