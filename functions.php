@@ -10,7 +10,9 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 
 register_nav_menu('nav_principale', 'Navigation principale, en-tête du site');
-register_nav_menu('footer', 'Navigation de pied de page');
+register_nav_menu('nav_legal', 'Lien légaux, pied de page');
+register_nav_menu('footer_nav', 'Navigation de pied de page');
+register_nav_menu('contact', 'page de contact, pied de page');
 
 add_theme_support('title_tag');
 
