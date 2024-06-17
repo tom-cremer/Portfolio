@@ -1048,6 +1048,216 @@ table {
   stroke: #10B982;
 }
 
+@font-face {
+  font-family: "Caveat";
+  src: url(/fonts/Caveat.ttf?31f0a02d84d42627c8941754389e2936);
+}
+@font-face {
+  font-family: "Poppins regular";
+  src: url(/fonts/Poppins-Regular.ttf?35d26b781dc5fda684cce6ea04a41a75);
+}
+@font-face {
+  font-family: "Poppins medium";
+  src: url(/fonts/Poppins-Medium.ttf?673ed42382ab264e0bf5b33f3579568c);
+}
+@font-face {
+  font-family: "Poppins semibold";
+  src: url(/fonts/Poppins-SemiBold.ttf?ac8d04b620e54be9b0f0f4851d56e4dd);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(/fonts/Poppins-Bold.ttf?cdb29a5d7ccf57ff05a3fd9216d11771);
+}
+.site-footer {
+  background: rgba(255, 255, 255, 0.1);
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  color: white;
+  padding: 70px 50px 10px;
+}
+.site-footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.site-footer .footer-container .footer-logo {
+  display: flex;
+  align-items: center;
+}
+.site-footer .footer-container .footer-logo img, .site-footer .footer-container .footer-logo svg {
+  width: 60px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+}
+.site-footer .footer-container .footer-logo span {
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+}
+.site-footer .footer-container .footer-column h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+}
+.site-footer .footer-container .footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-container .footer-column ul li {
+  margin-bottom: 8px;
+}
+.site-footer .footer-container .footer-column ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1em;
+  font-weight: 500;
+}
+.site-footer .footer-container .footer-column ul li a:hover {
+  color: #10B982;
+  text-decoration: underline;
+}
+.site-footer .footer-container .footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.site-footer .footer-container .footer-contact p {
+  font-weight: 500;
+  color: white;
+}
+.site-footer .footer-container .footer-contact .mail {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+.site-footer .footer-container .footer-contact .mail:hover {
+  color: #10B982;
+}
+.site-footer .footer-container .footer-contact .contact-button {
+  background-color: #10B982;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.site-footer .footer-container .footer-contact .contact-button:hover {
+  background-color: #38BC91;
+}
+.site-footer .footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 10px;
+}
+.site-footer .footer-bottom p {
+  font-size: 0.9em;
+  color: rgba(231, 231, 231, 0.83);
+}
+.site-footer .footer-bottom p span {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .site-footer .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-footer .footer-container .footer-logo {
+    margin-bottom: 20px;
+  }
+  .site-footer .footer-container .footer-column {
+    margin-bottom: 20px;
+  }
+  .site-footer .footer-container .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  .site-footer .footer-container .footer-contact {
+    width: 100%;
+    text-align: center;
+  }
+  .site-footer .footer-container .footer-contact .contact-button {
+    width: 100%;
+  }
+}
+@font-face {
+  font-family: "Caveat";
+  src: url(/fonts/Caveat.ttf?31f0a02d84d42627c8941754389e2936);
+}
+@font-face {
+  font-family: "Poppins regular";
+  src: url(/fonts/Poppins-Regular.ttf?35d26b781dc5fda684cce6ea04a41a75);
+}
+@font-face {
+  font-family: "Poppins medium";
+  src: url(/fonts/Poppins-Medium.ttf?673ed42382ab264e0bf5b33f3579568c);
+}
+@font-face {
+  font-family: "Poppins semibold";
+  src: url(/fonts/Poppins-SemiBold.ttf?ac8d04b620e54be9b0f0f4851d56e4dd);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(/fonts/Poppins-Bold.ttf?cdb29a5d7ccf57ff05a3fd9216d11771);
+}
+.container {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  line-height: 120%;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  color: white;
+}
+.container .infos .title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 130%;
+  text-align: center;
+}
+.container .infos p {
+  text-align: center;
+}
+.container h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 7px;
+  line-height: 125%;
+}
+.container h3 {
+  font-size: 1.1em;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.container p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+.container ul {
+  list-style: circle;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+.container ul li p {
+  margin: 0;
+}
+.container a {
+  color: #10B982;
+  text-decoration: none;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+
 :root {
   --button: #10B982;
   --button-hover: #38BC91;
