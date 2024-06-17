@@ -1615,8 +1615,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 7px;
 }
 .myself .w-list .w-item span {
   width: 30px;
@@ -1673,6 +1671,7 @@ body {
 .myself .li6 .me-2 .tag-list {
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -1682,14 +1681,15 @@ body {
   font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
+  word-wrap: break-word;
   font-size: 14px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 7px;
   background: rgba(10, 93, 74, 0.54);
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 5px 15px;
   box-shadow: 3px 4px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1707,20 +1707,255 @@ body {
 .myself .li8 {
   grid-area: 4/4/7/5;
 }
+.myself .li8 .w-list .w-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+}
+.myself .li8 .follow-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 10px;
+  padding: 10px 5px;
+  border-bottom: #10B982 solid 1px;
+}
+.myself .li8 .follow-me p {
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.myself .li8 .social-links {
+  font-family: "Poppins medium", "Montserrat", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  color: white;
+}
+.myself .li8 .social-links:hover {
+  color: #10B982;
+}
 .myself .li9 {
   grid-area: 4/5/7/7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.myself .li9 .icon {
+  width: 60px;
+  aspect-ratio: 1;
+  background: rgba(183, 183, 183, 0.1);
+  border-radius: 50%;
+  display: flex;
+  margin-right: 5px;
+}
+.myself .li9 .icon svg {
+  margin: auto;
+}
+.myself .li9 .title {
+  margin-top: 10px;
+  font-family: "Poppins semibold", "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+.myself .li9 .lets-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.myself .li9 .lets-work li {
+  width: 90%;
+  margin-bottom: 6px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  gap: 5px;
+}
+.myself .li9 .lets-work li span {
+  width: 30px;
+  aspect-ratio: 1;
+  background: rgba(183, 183, 183, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 5px;
+}
+.myself .li9 .lets-work li span svg {
+  margin: auto;
+}
+.myself .li9 .lets-work li a {
+  word-break: unset;
+  word-wrap: unset;
+  overflow-wrap: unset;
+  -webkit-hyphens: unset;
+  hyphens: unset;
+  font-family: "Poppins regular", "Montserrat", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: 0.1s ease-in-out;
+  color: white;
+  text-decoration: none;
+}
+.myself .li9 .lets-work li a:hover {
+  color: #10B982;
 }
 
-@media screen and (max-width: 950px) {
-  .p-list {
-    justify-content: center;
-  }
-}
 @media screen and (max-width: 1350px) {
   .project {
     width: 300px;
   }
   .project-list {
     width: 95%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .p-list {
+    justify-content: center;
+  }
+}
+.myself .me-grid {
+  display: grid;
+  justify-content: center;
+  width: 90%;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  grid-template-rows: repeat(6, 110px);
+  gap: 15px;
+}
+@media (max-width: 1050px) {
+  .myself .me-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 110px);
+  }
+}
+@media (max-width: 700px) {
+  .myself .me-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 110px);
+  }
+}
+@media (max-width: 500px) {
+  .myself .me-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-template-areas: "li1" "li2" "li3" "li4" "li4" "li4" "li5" "li5" "li5" "li6" "li6" "li6" "li7" "li7" "li7" "li8" "li8" "li8" "li9" "li9" "li9";
+  }
+}
+.myself .li1 {
+  grid-area: 1/1/2/2;
+}
+.myself .li2 {
+  grid-area: 1/2/2/3;
+}
+.myself .li3 {
+  grid-area: 1/3/2/4;
+}
+.myself .li4 {
+  grid-area: 1/4/4/6;
+}
+.myself .li5 {
+  grid-area: 1/6/4/7;
+}
+.myself .li6 {
+  grid-area: 2/1/5/4;
+}
+.myself .li7 {
+  grid-area: 5/1/7/4;
+}
+.myself .li8 {
+  grid-area: 4/4/7/5;
+}
+.myself .li9 {
+  grid-area: 4/5/7/7;
+}
+@media (max-width: 1050px) {
+  .myself .li1 {
+    grid-area: 1/1/2/2;
+  }
+  .myself .li2 {
+    grid-area: 1/2/2/3;
+  }
+  .myself .li3 {
+    grid-area: 1/3/2/4;
+  }
+  .myself .li4 {
+    grid-area: 2/3/5/4;
+  }
+  .myself .li5 {
+    grid-area: 5/3/8/4;
+  }
+  .myself .li6 {
+    grid-area: 2/1/5/3;
+  }
+  .myself .li7 {
+    grid-area: 5/1/7/3;
+  }
+  .myself .li8 {
+    grid-area: 7/1/11/2;
+  }
+  .myself .li9 {
+    grid-area: 7/2/11/3;
+  }
+}
+@media (max-width: 700px) {
+  .myself .li1 {
+    grid-area: 1/1/2/2;
+  }
+  .myself .li2 {
+    grid-area: 2/1/3/2;
+  }
+  .myself .li3 {
+    grid-area: 3/1/4/2;
+  }
+  .myself .li4 {
+    grid-area: 4/1/7/2;
+  }
+  .myself .li5 {
+    grid-area: 1/2/4/3;
+  }
+  .myself .li6 {
+    grid-area: 7/1/10/3;
+  }
+  .myself .li7 {
+    grid-area: 4/2/7/3;
+  }
+  .myself .li8 {
+    grid-area: 10/1/13/2;
+  }
+  .myself .li9 {
+    grid-area: 10/2/13/3;
+  }
+}
+@media (max-width: 500px) {
+  .myself .li1 {
+    grid-area: li1;
+  }
+  .myself .li2 {
+    grid-area: li2;
+  }
+  .myself .li3 {
+    grid-area: li3;
+  }
+  .myself .li4 {
+    grid-area: li4;
+  }
+  .myself .li5 {
+    grid-area: li5;
+  }
+  .myself .li6 {
+    grid-area: li6;
+  }
+  .myself .li7 {
+    grid-area: li7;
+  }
+  .myself .li8 {
+    grid-area: li8;
+  }
+  .myself .li9 {
+    grid-area: li9;
   }
 }

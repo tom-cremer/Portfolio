@@ -294,22 +294,24 @@
                 <ul class="parkour-list">
                     <?php foreach (get_field('formations') as $formation):
                         if ($formation):
-                            ?>
-                        <li class="parkour-item">
-                                <article class="parkour">
-                                    <p class="pk-date"><?= $formation["date_from"] ?>&nbsp;&hyphen;&nbsp;<?= $formation["date_to"]?></p>
-                                    <div>
-                                        <h3 class="pk-title"><?=$formation["titre_formation"] ?></h3>
-                                        <p class="pk-desc"><?=$formation["details"] ?></p>
-                                    </div>
-                                    <svg class="pk-dia" width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.28228 0.409219C5.58858 -0.115777 6.41492 -0.115779 6.72105 0.409316C7.17089 1.1809 7.77432 2.04718 8.57719 2.9C9.39335 3.76693 10.2154 4.40726 10.935 4.87683C11.3904 5.17397 11.4143 5.8668 10.9747 6.18676C10.2407 6.72094 9.42064 7.4137 8.59825 8.30336C7.78829 9.17958 7.15538 10.0542 6.66469 10.84C6.36547 11.3191 5.63513 11.3188 5.33589 10.8396C4.8452 10.0539 4.21161 9.17946 3.40175 8.30336C2.5801 7.4145 1.76077 6.72218 1.0273 6.18819C0.587295 5.86786 0.611654 5.17376 1.06746 4.87633C1.78697 4.40684 2.60856 3.7661 3.42281 2.9C4.22781 2.04715 4.8321 1.18083 5.28228 0.409219Z"
-                                              fill="#10B982"/>
-                                    </svg>
-                                </article>
-                        </li>
-                    <?php endif; endforeach; ?>
+                            if (strlen($formation["titre_formation"]) !== 0):
+                                ?>
+                                <li class="parkour-item">
+                                    <article class="parkour">
+                                        <p class="pk-date"><?= $formation["date_from"] ?>
+                                            &nbsp;&hyphen;&nbsp;<?= $formation["date_to"] ?></p>
+                                        <div>
+                                            <h3 class="pk-title"><?= $formation["titre_formation"] ?></h3>
+                                            <p class="pk-desc"><?= $formation["details"] ?></p>
+                                        </div>
+                                        <svg class="pk-dia" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.28228 0.409219C5.58858 -0.115777 6.41492 -0.115779 6.72105 0.409316C7.17089 1.1809 7.77432 2.04718 8.57719 2.9C9.39335 3.76693 10.2154 4.40726 10.935 4.87683C11.3904 5.17397 11.4143 5.8668 10.9747 6.18676C10.2407 6.72094 9.42064 7.4137 8.59825 8.30336C7.78829 9.17958 7.15538 10.0542 6.66469 10.84C6.36547 11.3191 5.63513 11.3188 5.33589 10.8396C4.8452 10.0539 4.21161 9.17946 3.40175 8.30336C2.5801 7.4145 1.76077 6.72218 1.0273 6.18819C0.587295 5.86786 0.611654 5.17376 1.06746 4.87633C1.78697 4.40684 2.60856 3.7661 3.42281 2.9C4.22781 2.04715 4.8321 1.18083 5.28228 0.409219Z"
+                                                  fill="#10B982"/>
+                                        </svg>
+                                    </article>
+                                </li>
+                            <?php endif; endif; endforeach; ?>
 
                 </ul>
             </li>
@@ -338,28 +340,54 @@
                 <ul class="w-list">
                     <li class="w-item">
                         <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="1.75"
+                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-hard-hat"><path
-                                        d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path
-                                        d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path
-                                        d="M4 15v-3a6 6 0 0 1 6-6h0"/><path d="M14 6h0a6 6 0 0 1 6 6v3"/></svg></span>
+                                                class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8"
+                                                                                           y="2" rx="1" ry="1"/><path
+                                        d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path
+                                        d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path
+                                        d="M8 16h.01"/></svg>
+                        </span>
                         <p>Objectifs</p>
                     </li>
                     <li class="w-item">
-                        <span class="icon"></span>
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-scan-search"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path
+                                        d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path
+                                        d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path
+                                        d="m16 16-1.9-1.9"/></svg></span>
                         <p>Recherche</p>
                     </li>
                     <li class="w-item">
-                        <span class="icon"></span>
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-pen-tool"><path
+                                        d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path
+                                        d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path
+                                        d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></span>
                         <p>Wireframe</p>
                     </li>
                     <li class="w-item">
-                        <span class="icon"></span>
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-layers"><path
+                                        d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path
+                                        d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path
+                                        d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
                         <p>Prototypage</p>
                     </li>
                     <li class="w-item">
-                        <span class="icon"></span>
+                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-gift"><rect x="3" y="8" width="18" height="4"
+                                                                                 rx="1"/><path d="M12 8v13"/><path
+                                        d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path
+                                        d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></span>
                         <p>Produit final</p>
                     </li>
                 </ul>
@@ -368,16 +396,17 @@
             <li class="me-grid-item li6">
                 <div class="me-1">
                     <div class="me-div1">
-                        <img class="me-img" src="<?= get_field('me_1')["photo_de_profile"]["url"] ?>" alt="<?=get_field('me_1')["photo_de_profile"]["alt"]?>">
+                        <img class="me-img" src="<?= get_field('me_1')["photo_de_profile"]["url"] ?>"
+                             alt="<?= get_field('me_1')["photo_de_profile"]["alt"] ?>">
                         <!--https://placehold.jp/100x100.png-->
                     </div>
                     <div class="me-div2">
                         <p class="me-name"><?= get_field('me_1')["full_name"] ?></p>
                         <ul class="tag-list">
                             <?php foreach (get_field("me_1")["formation_sticker"] as $sticker): ?>
-                            <li class="tag-item">
-                                <p class="me-tag"><?= $sticker ?></p>
-                            </li>
+                                <li class="tag-item">
+                                    <p class="me-tag"><?= $sticker ?></p>
+                                </li>
                             <?php endforeach; ?>
 
                         </ul>
@@ -386,91 +415,176 @@
 
                 </div>
                 <div class="me-2">
-                    <ul class="tag-list">
-                        <li class="tag-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none" stroke="#10B982" stroke-width="1.75" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-hard-hat">
-                                <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-                                <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
-                                <path d="M4 15v-3a6 6 0 0 1 6-6h0"/>
-                                <path d="M14 6h0a6 6 0 0 1 6 6v3"/>
-                            </svg>
-                            <p><?= get_field('me_1')["personnal_data"]["country"]?></p>
-                        </li>
-                        <li class="tag-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none" stroke="#10B982" stroke-width="1.75" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-hard-hat">
-                                <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-                                <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
-                                <path d="M4 15v-3a6 6 0 0 1 6-6h0"/>
-                                <path d="M14 6h0a6 6 0 0 1 6 6v3"/>
-                            </svg>
-                            <p><?= get_field('me_1')["personnal_data"]["permis"]?></p>
-                        </li>
-                        <li class="tag-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none" stroke="#10B982" stroke-width="1.75" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-hard-hat">
-                                <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-                                <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
-                                <path d="M4 15v-3a6 6 0 0 1 6-6h0"/>
-                                <path d="M14 6h0a6 6 0 0 1 6 6v3"/>
-                            </svg>
-                            <p><?= get_field('me_1')["personnal_data"]["birth_date"]?></p>
-                        </li>
-                        <li class="tag-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none" stroke="#10B982" stroke-width="1.75" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-hard-hat">
-                                <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-                                <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
-                                <path d="M4 15v-3a6 6 0 0 1 6-6h0"/>
-                                <path d="M14 6h0a6 6 0 0 1 6 6v3"/>
-                            </svg>
-                            <p><?= get_field('me_1')["personnal_data"]["langues_1"]?></p>
-                        </li>
-                        <li class="tag-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                 fill="none" stroke="#10B982" stroke-width="1.75" stroke-linecap="round"
-                                 stroke-linejoin="round" class="lucide lucide-hard-hat">
-                                <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/>
-                                <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
-                                <path d="M4 15v-3a6 6 0 0 1 6-6h0"/>
-                                <path d="M14 6h0a6 6 0 0 1 6 6v3"/>
-                            </svg>
-                            <p><?= get_field('me_1')["personnal_data"]["langues_2"]?></p>
-                        </li>
-                    </ul>
+                    <?php if (get_field('me_1')): ?>
+                        <?php if (get_field('me_1')["personnal_data"]): ?>
+                            <ul class="tag-list">
+                                <?php if (get_field('me_1')["personnal_data"]['country']): ?>
+                                    <li class="tag-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pinned"><path d="M18 8c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.835 14H5a1 1 0 0 0-.9.7l-2 6c-.1.1-.1.2-.1.3 0 .6.4 1 1 1h18c.6 0 1-.4 1-1 0-.1 0-.2-.1-.3l-2-6a1 1 0 0 0-.9-.7h-3.835"/></svg>
+                                        <p><?= get_field('me_1')["personnal_data"]["country"] ?></p>
+                                    </li>
+                                <?php endif; ?>
+
+                                <?php if (get_field('me_1')["personnal_data"]['permis']): ?>
+                                    <li class="tag-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-car"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                                        <p><?= get_field('me_1')["personnal_data"]["permis"] ?></p>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if (get_field('me_1')["personnal_data"]['birth_date']): ?>
+                                    <li class="tag-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+                                        <p><?= get_field('me_1')["personnal_data"]["birth_date"] ?></p>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if (get_field('me_1')["personnal_data"]['langues_1']): ?>
+                                    <li class="tag-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                                        <p><?= get_field('me_1')["personnal_data"]["langues_1"] ?></p>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if (get_field('me_1')["personnal_data"]['langues_2']): ?>
+                                    <li class="tag-item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                                        <p><?= get_field('me_1')["personnal_data"]["langues_2"] ?></p>
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </li>
             <!--Description-->
             <li class="me-grid-item li7">
-                <p class="desc"><?= get_field('about_me')?></p>
+                <p class="desc"><?= get_field('about_me') ?></p>
             </li>
             <!--Link Me-->
             <li class="me-grid-item li8">
+                <div class="follow-me">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-link">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                    <p>Mes Réseaux</p>
+                </div>
                 <ul class="w-list">
-                    <li class="w-item">
-                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 24 24" fill="none" stroke="#10B982" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-instagram">
-                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                            </svg></span>
-                        <a href="" class="">Instagram</a>
-                    </li>
-                    <li class="w-item">
-                        <span class="icon"></span>
-                        <p>Recherche</p>
-                    </li>
+                    <?php if (get_field('social_links')): ?>
+                        <?php if (get_field('social_links')['instagram']): ?>
+                            <li class="w-item">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 24 24" fill="none" stroke="#10B982"
+                                         stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round"
+                                         class="lucide lucide-instagram">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                    </svg>
+                                </span>
+                                <a href="<?= get_field('social_links')['instagram']; ?>"
+                                   class="social-links">Instagram</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                    <?php if (get_field('social_links')): ?>
+                        <?php if (get_field('social_links')['linkedin']): ?>
+                            <li class="w-item">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 24 24" fill="none" stroke="#10B982"
+                                         stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round"
+                                         class="lucide lucide-linkedin">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                    </svg>
+                                </span>
+                                <a href="<?= get_field('social_links')['linkedin']; ?>"
+                                   class="social-links">Linkedin</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (get_field('social_links')): ?>
+                        <?php if (get_field('social_links')['facebook']): ?>
+                            <li class="w-item">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 24 24" fill="none" stroke="#10B982"
+                                         stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round"
+                                         class="lucide lucide-facebook">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                    </svg>
+                                </span>
+                                <a href="<?= get_field('social_links')['facebook']; ?>"
+                                   class="social-links">Facebook</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </ul>
             </li>
             <!--Contact Me-->
-            <li class="me-grid-item li9">9</li>
+            <li class="me-grid-item li9">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                         stroke="#10B982" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-crown"><path
+                                d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path
+                                d="M5 21h14"/></svg>
+                </span>
+                <p class="title">Concrétisons vos Projets</p>
+
+                <ul class="lets-work">
+                    <?php if (get_field('contact_links')): ?>
+                        <?php if (get_field('contact_links')['github']): ?>
+                            <li>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                           fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round"
+                                           stroke-linejoin="round" class="lucide lucide-github"><path
+                                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path
+                                                d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+                                <a href="<?= get_field('contact_links')['github'] ?>">Github</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (get_field('contact_links')): ?>
+                        <?php if (get_field('contact_links')['contact_mail']): ?>
+                            <li>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                           fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round"
+                                           stroke-linejoin="round" class="lucide lucide-mail"><rect width="20"
+                                                                                                    height="16" x="2"
+                                                                                                    y="4" rx="2"/><path
+                                                d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                                <a href="mailto:<?= get_field('contact_links')['contact_mail'] ?>"><?= get_field('contact_links')['contact_mail'] ?></a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (get_field('contact_links')): ?>
+                        <?php if (get_field('contact_links')['contact_page']): ?>
+                            <li>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                           fill="none" stroke="#10B982" stroke-width="2" stroke-linecap="round"
+                                           stroke-linejoin="round" class="lucide lucide-text-cursor-input"><path
+                                                d="M5 4h1a3 3 0 0 1 3 3 3 3 0 0 1 3-3h1"/><path
+                                                d="M13 20h-1a3 3 0 0 1-3-3 3 3 0 0 1-3 3H5"/><path
+                                                d="M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1"/><path
+                                                d="M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7"/><path d="M9 7v10"/></svg></span>
+                                <a href="<?= get_field('contact_links')['contact_page'] ?>">Formulaire de Contact</a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
+                </ul>
+
+            </li>
         </ul>
     <?php endwhile; ?>
 </section>
