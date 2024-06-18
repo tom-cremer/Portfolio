@@ -19,7 +19,7 @@
 <nav class="nav">
     <h2 class="hidden"><?= __('Navigation principale', 'pf') ?></h2>
     <ul class="nav-container">
-        <?php foreach (pf_get_navigation_links('main') as $link): ?>
+        <?php foreach (pf_get_navigation_links('nav_principale') as $link): ?>
             <li class="nav-item">
                 <a href="<?= $link->url ?>" class="nav-link"><?= $link->label ?></a>
             </li>
