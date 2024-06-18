@@ -69,7 +69,9 @@
                     <p class="o-title">Prenez Avantage de votre carte et concrétisons vos projets ensemble&nbsp;!</p>
                 </li>
                 <li class="o-items">
-                    <a class="o-contact" href="#">Contact</a>
+                    <?php foreach (pf_get_navigation_links('contact') as $link): ?>
+                        <a href="<?= $link->url ?>" class="o-contact" itemprop="url"><?= $link->label ?></a>
+                    <?php endforeach; ?>
                 </li>
             </ul>
             <div class="cross">
